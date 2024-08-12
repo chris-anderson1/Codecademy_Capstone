@@ -1,0 +1,1013 @@
+/* Whole Page */
+
+
+
+
+* {
+    box-sizing: border-box;
+    background-color: #4B4E53;
+    font-size: 16px;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+/* HEADER */
+
+
+
+
+header {
+    color: silver;
+    width: 100%;
+    height: 11rem;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 15% 20% 20% 25% 10%;
+    grid-template-rows: 50% 50%;
+    border-bottom: 9px solid black;
+}
+
+header .logo {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+}
+
+header img {
+    width: 9.1rem;
+    height: 9.1rem;
+    position: relative;
+    margin-left: 2rem;
+    margin-top: .75rem;
+    background-color: transparent;
+}
+
+header .title {
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+}
+
+header h1 {
+    position: relative;
+    font-size: 2.25rem;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    animation: fadeIn 4.5s;
+    z-index: 50;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    margin-right: auto;
+}
+
+header .subtitle {
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    align-items: end;
+}
+
+header h3 span {
+    font-size: 2rem;
+    font-family: 'Montserrat';
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-weight: bold;
+}
+
+#future {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 4.5s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    left: 8%;
+    text-align: center;
+}
+
+#craft {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 4.5s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+    left: 16%;
+    text-align: center;
+    
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.hamburger-menu {
+    grid-column-start: 5;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 5.25rem; 
+    height: 3.15rem; 
+    cursor: pointer;
+    margin-top: 4rem;
+    left: 75%;
+}
+
+.line {
+    background-color: black; 
+    height: 6px; 
+    border-radius: .25rem; 
+    transition: all 0.3s ease; 
+}
+
+nav ul {
+    list-style: none;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially off-screen to the right */
+    height: 50%;
+    width: 300px;
+    background-color: gray;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease; /* Smooth transition */
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+nav ul.visible {
+    right: 0;
+    margin-bottom: 2rem;
+}
+
+nav ul li {
+    padding-top: .5rem;
+    margin-top: .5rem;
+    background-color: transparent;
+}
+
+nav ul li a {
+    font-family: 'Montserrat';
+    font-size: 1.75rem;
+    border: 3px solid black;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: black;
+    z-index: 10;
+}
+
+nav ul li a:hover {
+    background-color: silver;
+}
+
+#close {
+    position: relative;
+    font-size: 2.5rem;
+    font-family: 'Montserrat';
+    color: black;
+    left: 85%;
+    font-weight: bold;    
+    cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+    header {
+        grid-template-columns: 15% 25% 25% 25% 10%; /* Adjust column widths */
+        height: auto;
+        width: auto;
+        overflow: auto;
+    }
+
+    header img {
+        width: 5.6rem; /* Resize the logo */
+        height: 5.6rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem; /* Resize title */
+        margin-top: 0.5rem;
+        margin-left: 1.5rem;
+    }
+
+    header h3 span {
+        font-size: 1.5rem; /* Resize subtitle */
+    }
+
+    header #future {
+        font-size: 1.5rem;
+        left: 8%;
+    }
+
+    header #craft {
+        font-size: 1.5rem;
+        left: 16%;
+        margin-top: .5rem;
+    }
+
+    .hamburger-menu {
+        width: 3.5rem; /* Resize hamburger menu */
+        height: 2.45rem;
+        margin-top: 2rem;
+        left: 0%; /* Adjust position */
+    }
+
+    nav ul {
+        list-style: none;
+        position: fixed;
+        top: 0;
+        top: -100%; /* Initially off-screen to the right */
+        height: 55%;
+        width: auto;
+        background-color: gray;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: top 0.3s ease; /* Smooth transition */
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul.visible {
+        top: 0;
+        margin-bottom: 2rem;
+    }
+
+    
+}
+
+@media (max-width: 1024px) {
+    nav ul {
+        height: 27%;
+    }
+}
+
+
+/* tablets/smaller screens */
+
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr; /* Stack elements vertically */
+        grid-template-rows: auto;
+        height: auto;
+        width: auto;
+        overflow: auto;
+    }
+
+    header .logo, header .title, header .subtitle, header .hamburger-menu {
+        grid-column: span 1; /* Each element takes full width */
+        grid-row: auto;
+        text-align: center; /* Center align text */
+    }
+
+    header img {
+        width: 5.6rem; /* Resize the logo */
+        height: 5.6rem;
+        margin: auto;
+        margin-right: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem; /* Resize title */
+        margin: 1rem auto;
+
+    }
+
+    header #future {
+        font-size: 1.25rem;
+        left: -10%;
+    }
+
+    header #craft {
+       left: 5%;
+       font-size: 1.25rem;
+
+    }
+
+    .hamburger-menu {
+        width: 3.5rem; /* Resize hamburger menu */
+        height: 2.1rem;
+        margin: 2rem auto;
+        left: 0;
+    }
+
+    
+    nav ul {
+        list-style: none;
+        position: fixed;
+        top: 0;
+        top: -100%; /* Initially off-screen to the right */
+        height: 35%;
+        width: auto;
+        background-color: gray;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: top 0.3s ease; /* Smooth transition */
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul.visible {
+        top: 0;
+        margin-bottom: 2rem;
+    }
+
+}
+
+/* phones */
+
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        width: auto;
+        overflow: auto;
+        padding: 1rem;
+    }
+
+    header img {
+        width: 4.2rem; /* Resize the logo */
+        height: 4.2rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Resize title */
+    }
+
+    header h3 span {
+        font-size: 1rem; /* Resize subtitle */
+    }
+
+    .hamburger-menu {
+        width: 2.8rem; /* Resize hamburger menu */
+        height: 1.75rem;
+    }
+
+    
+
+    nav ul li a {
+        font-size: 1.25rem; /* Resize navigation links */
+    }
+
+    nav ul {
+        list-style: none;
+        position: fixed;
+        top: 0;
+        top: -100%; /* Initially off-screen to the right */
+        height: 45%;
+        width: auto;
+        background-color: gray;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+        transition: top 0.3s ease; /* Smooth transition */
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul.visible {
+        top: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MAIN */
+
+
+/* I want to maybe animate the text to appear in on scroll */
+
+#video1 {
+    margin: 0;
+    padding: 0;
+    height: 50%;
+    width: auto;
+    object-fit: fill;
+    position: relative;
+    border-bottom: 9px solid black;
+
+}
+
+#video1 video {
+    padding: 0;
+    margin: 0;
+    height: 50%;
+    width: 100%;
+    object-fit: fill;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+.about {
+    text-align: center;
+    border-top: white solid 12px;
+    border-bottom: white solid 12px;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    height: 35rem;
+}
+
+.about h2 {
+    margin-top: .5rem;
+    font-size: 2.25rem;
+    color: white;
+    font-weight: bold;
+    font-family:'Montserrat';
+    text-shadow: 1px 1px 0 #000
+
+}
+
+.about p {
+    font-size: 1.25rem;
+    color: white;
+    font-family: 'Roboto';
+    margin-top: 3rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    line-height: 225%;
+    text-shadow: 1px 1px 0 #000;
+    padding-bottom: 1rem;
+}
+
+.about a {
+    font-size: 1.75rem;
+    color: white;
+    font-family: 'Montserrat';
+    border: 6px solid black;
+    padding-top: .5rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.about a:hover {
+    background-color: black;
+}
+
+.coal{
+    margin: 0;
+    padding: 0;
+    height: 20rem;
+    width: 100%;
+    background-image: url("..//Resources/coal.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    background-attachment: fixed;
+}
+
+.chain{
+    margin: 0;
+    padding: 0;
+    height: 20rem;
+    width: 100%;
+    background-image: url("..//Resources/chain.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    background-attachment: fixed;
+}
+
+.expert {
+    background-color: white;
+    color: #4B4E53;
+    font-family: 'Montserrat';
+    border-top: 12px solid #4B4E53;
+    border-bottom: 12px solid #4B4E53;
+    text-align: center;
+    padding-bottom: 5rem;
+    padding-top: 1rem;
+    padding-right:2rem;
+}
+
+.expert h2 {
+    background-color: white;
+    font: #4B4E53;
+    margin-top: 3rem;
+    font-size: 2.25rem;
+    padding-bottom: 1rem;
+}
+.expert ul {
+    background-color: white;
+    font: #4B4E53;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.expert ul li{
+    background-color: white;
+    font: #4B4E53;
+    list-style: none;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size:  1.75rem;
+    font-weight: bold;
+    margin-bottom: 4rem;
+    font-family: 'Roboto';
+}
+
+.expert ul li a {
+    font-size: 1.5rem;
+    background-color: white;
+    color: #4B4E53;
+    text-decoration: none;
+}
+
+.expert ul li a:hover{
+    text-decoration: underline;
+}
+
+.expert p {
+    background-color: white;
+}
+
+.expert p a {
+    background-color: white;
+    font-family: 'Montserrat';
+    border: 6px #4B4E53 solid;
+    border-radius: 6px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    font-size:  1.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.expert p a:hover{
+    background-color: #4B4E53;
+}
+
+.exp {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 6px;
+    border: #4B4E53 solid 6px;
+}
+
+
+.insight {
+    background-color: #4B4E53;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 33% 33% 34%;
+    border-top: solid black 12px;
+    border-bottom: solid black 12px;
+    height: 35rem;
+    }
+
+
+.insight .words {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    
+}
+
+.insight h2 {
+    color: white;
+    font-size: 2.25rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-family: 'Montserrat';
+}
+
+.insight p {
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-bottom: 10%;
+    line-height: 225%;
+    font-family: 'Roboto';
+    
+}
+
+.insight .picture {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 3;
+    background-image: url('..//Resources/stock.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    border-left: solid black 6px;
+}
+
+.insight .link {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    margin-top: 3rem;
+}
+
+.insight a {
+    font-size: 1.75rem;
+    font-family: 'Montserrat';
+    border: solid 6px black;
+    border-radius: 6px;
+    padding: .5rem .5rem .5rem .5rem;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.insight a:hover{
+    background-color: black;
+}
+
+
+@media (max-width: 1280px) {
+    
+    .about p {
+        margin-left: 7rem;
+        margin-right: 7rem;
+    }
+
+    .insight h2 {
+
+        margin-bottom: 2.5rem;;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    
+    .about {
+        padding-bottom: 1rem;
+    }
+
+    .about p {
+        margin-left: 5rem;
+        margin-right: 5rem;
+        line-height: 200%;
+    }
+
+    .insight h2 {
+        margin-bottom: 3rem;
+    }
+
+    .insight p{
+        line-height: 200%;
+        
+    }
+
+    .insight .link {
+        margin-top: 4rem;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .about p {
+        font-size: 1rem;
+    }
+    
+    .insight p {
+        font-size: 1rem;
+    }
+
+    .about p {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    .insight a {
+        margin-top: 0rem;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .about p {
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+        font-size: 1rem;
+        line-height: 150%;
+        margin-top: 1.5rem;
+    }
+
+    .about h2 {
+        font-size: 1.5rem;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+
+    .about a {
+        font-size: 1.25rem;
+
+    }
+
+    .about {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .insight h2{
+        font-size: 1.5rem;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+    }
+
+    .insight p {
+        margin-left: .3rem;
+        margin-right: .3rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        line-height: 150%
+    }
+
+    .insight a {
+        font-size: 1.5rem;
+    }
+
+    .insight .link {
+        background-color: transparent;
+        padding-top: 2rem;
+    }
+
+    .insight h2 {
+        margin-bottom: 2rem;
+    }
+    
+}
+
+
+/* FOOTER */
+
+
+
+
+footer  {
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    grid-template-rows: 33% 33% 34%;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+    background-image: url("..//Resources/Footer_Image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+}
+
+.footerinfo {
+    background-color: transparent;
+}
+
+footer .imageContain {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 1;
+    background-color: transparent;
+    text-align: center;
+}
+
+#logo1 {
+    width: 9.1rem;
+    height: 9.1rem;
+    background-color: transparent;
+    color: white;
+    position: relative;
+    margin-top: 4rem;
+}
+
+footer .addContain {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    background-color: transparent;
+    text-align: center;
+}
+
+#address {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 4.5rem;
+}
+
+footer .formContain {
+    grid-column-start: 3;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    background-color: transparent;
+    
+
+} 
+
+#form, #form a {
+    background-color: transparent;
+    font-size: 1.4rem;
+    font-weight: bold;
+    position: relative;
+    left: 3%;
+    top: 50%;
+}
+
+#form a {
+    border: 3px solid black;
+    background-color: silver;
+    color: black;
+    padding: 1rem .75rem;
+    border-radius: 6px;
+}
+
+#form a:hover {
+    background-color: #4B4E53;
+}
+
+footer .brokerContain {
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    background-color: transparent;
+}
+
+#broker, #broker img, #broker a {
+    background-color: transparent;
+    position: relative;
+    left: 30%;
+    top: 20%;
+    width: 9.8rem;
+    padding: 0;
+    margin: 0;
+}
+
+#broker img:hover {
+    border: solid 3px black;
+}
+
+footer .legal {
+    font-weight: bold;
+    background-color: transparent;
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+@media (max-width: 1280px) {
+    footer  {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+    }
+    
+    .footerinfo {
+        background-color: transparent;
+    }
+
+    #logo1 {
+        width: 7rem;
+        height: 7rem;
+        position: relative;
+        margin-top: 1rem;
+    }
+    
+    #address {
+        background-color: transparent;
+        font-weight: bold;
+        font-size: .98rem;
+        margin-top: 4.5rem;
+    }
+    
+    #form, #form a {
+        background-color: transparent;
+        font-size: 1.05rem;
+        font-weight: bold;
+        position: relative;
+        left: 16%;
+        top: 50%;
+    }
+    
+    #form a {
+        border: 3px solid black;
+        background-color: silver;
+        color: black;
+        padding: 1rem .75rem;
+        border-radius: 6px;
+    }
+    
+    #broker, #broker img, #broker a {
+        background-color: transparent;
+        position: relative;
+        left: 18%;
+        top: 20%;
+        width: 7rem;
+        padding: 0;
+        margin: 0;
+    }
+    
+    footer .legal {
+        font-weight: bold;
+        background-color: transparent;
+        grid-column-start: 1;
+        grid-column-end: span 3;
+        grid-row-start: 3;
+        grid-row-end: span 1;
+        margin-top: 3.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    #broker img {
+       left: 10%;
+       top: 23%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    #logo1 {
+        width: 5.6rem;
+        height: 5.6rem;
+    }
+    
+    #address {
+        font-size: .5rem;
+        margin-top: 4.5rem;
+    }
+    
+   
+
+    #form, #form a {
+        font-size: .525rem;
+        left: 0%;
+        top: 47%;
+    }
+    
+    #form a {
+        padding: .75rem .5rem;
+        border-radius: 6px;
+    }
+    
+    #broker, #broker img, #broker a {
+        left: 18%;
+        top: 20%;
+        width: 5rem;
+    }
+    
+    footer .legal {
+        font-size: .5rem;
+    }
+}
